@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/3a91969c1a.js"></script>
+    <script type=text/javascript>
+		$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+	  </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+</head>
+
+<body>
+    <div style="margin-top: 150px;" class="columns is-mobile is-centered">
+        <div class="panel column is-half"
+            style="padding: 3%;
+	    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(206, 197, 197) 0%, rgb(204, 170, 214) 100.2% );">
+            <div style="padding-top: 0px;padding-bottom: 0px;">
+                <p style="font-size: 90px;font-family: 'Changa One', cursive;">Search</p>
+                <p style="margin-top: -50px; font-size: 70px;font-family: 'Changa One', cursive;">Doctors</p>
+            </div>
+            <div style="text-align: center;">
+                <form action="#" method="POST">
+
+                    <div style="padding-top: 0px;">
+                        <input name="searchid" autocomplete="off" id="livebox" type="text" class="input is-rounded"
+                            placeholder="Search any Doctor" required>
+                        <p id="datalist"></p>
+                    </div>
+                    <div style="padding-top: 12px;padding-bottom:12px;">
+                        <button id="search_button" class="button is-danger is-rounded is-outlined is-fullwidth"
+                            type="submit">Search</button>
+
+
+                        <script>
+                            $(document).ready(function () {
+                                $('#livebox').on('input', function () {
+                                    livebox = $('#livebox').val();
+                                    $('#search_button').slideUp(200);
+                                    $('#datalist').slideDown(300);
+                                    $.ajax({
+                                        method: 'POST',
+                                        url: $SCRIPT_ROOT + "search_doctor_ajax",
+                                        data: { text: livebox },
+                                        success: function (result) {
+                                            var data = "<div style='margin-top:10px' class='buttons'>";
+                                            $.each(result, function (index, value) {
+                                                data += "<div class='button is-rounded'>" + value + "</div>"
+                                            });
+                                            data += "</ul>";
+                                            $('#datalist').html(data);
+                                        }
+                                    })
+                                })
+
+                            })
+
+                        </script>
+
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
