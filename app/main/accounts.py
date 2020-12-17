@@ -156,5 +156,4 @@ def loginspec():
 @main.route('/logout')
 def user_logout():
     session.clear()
-    flash('Successfully logged out.')
     return redirect(url_for('main.landing'))

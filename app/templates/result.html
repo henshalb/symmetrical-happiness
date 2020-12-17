@@ -1,38 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
-    <script src="https://use.fontawesome.com/3a91969c1a.js"></script>
-    <script type=text/javascript>
-		$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
-	  </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    
-</head>
-
-<body>
-    <div class="tabs is-centered">
-        {% if 'USER_LOGGED_IN' in session:%}
-        <ul>
-            <li class="is-active"><a>{{name}}</a></li>
-            <li><a href="{{url_for('main.user_logout')}}">Logout</a></li>
-
-          </ul> 
-        {% else:%}
-        <ul>
-          <li><a href="{{url_for('main.user_login')}}">Login</a></li>
-          <li><a href="{{url_for('main.user_register')}}">Register</a></li>
-        </ul>
-        {%endif%}
-      </div>
-
+{% extends 'base.html' %}
+{% block content %}
 
     <div style="text-align: center;margin-top: -7px;">
         <p class="title" id="fullName">{{doctor_name}}</p>
@@ -89,7 +56,7 @@
                 <div class="tile is-parent">
                     <article class="tile is-child box animate__animated animate__flipInX">
                         <p><span style="color: green;">8</span> slots</p>
-                        <p>7 Jan 2020</p>
+                        <p>7 Jan 2021</p>
                     </article>
                 </div>
             </div>
@@ -97,8 +64,6 @@
             </div>
         </div>
     </div>
+    <br><br>
 
-
-</body>
-
-</html>
+{% endblock %}

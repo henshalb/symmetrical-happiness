@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/3a91969c1a.js"></script>
+    <script type=text/javascript>
+		$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+	  </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="tabs is-centered">
+        {% if 'USER_LOGGED_IN' in session:%}
+        <ul>
+            <li class="is-active"><a>{{name}}</a></li>
+            <li><a href="{{url_for('main.user_logout')}}">Logout</a></li>
+
+          </ul> 
+        {% else:%}
+        <ul>
+          <li><a href="{{url_for('main.user_login')}}">Login</a></li>
+          <li><a href="{{url_for('main.user_register')}}">Register</a></li>
+        </ul>
+        {%endif%}
+      </div>
+{% block content %}{% endblock %}
+{% block footer %}
+        <div class="content has-text-centered">
+            <p>
+                <strong>Designed</strong> by <a href="https://github.com/henshalb">Henshal B</a>. The source code is not
+                licensed.
+            </p>
+        </div>
+</body>
+
+</html>
+{% endblock %}

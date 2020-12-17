@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<title>POKETQ - Login</title>
+	<title>Symmetrical Happiness - Login</title>
 	<link href="https://fonts.googleapis.com/css2?family=Thasadith:wght@700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -23,7 +23,7 @@
 
 </head>
 
-<body style="padding: 2%; font-family: 'Thasadith', sans-serif;">
+<body style="padding: 2%; font-family: 'Thasadith', sans-serif; font-size: medium;">
     <div class="se-pre-con"></div>
     <script>
         $(window).load(function() {
@@ -31,7 +31,7 @@
 	});
 
     </script>
-	<p onmousedown = 'return false' onselectstart = 'return false' style="font-family: 'Changa One', cursive;;font-size:85px;color: #e8175d;text-align: center;">POKETQ</p>
+	<p onmousedown = 'return false' onselectstart = 'return false' style="font-family: 'Changa One', cursive;;font-size:85px;color: black;text-align: center;">Dr.Search</p>
 
 	<div class="panel col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4" id=”content-mobile”>
 
@@ -79,7 +79,7 @@
 							</div>
 
 							<input type="submit" value="Login" class="button is-danger is-rounded is-fullwidth"><br>
-							<a href="/register" value="Register" class="button is-danger is-rounded is-outlined is-fullwidth">Register</a>
+							<a href="{{url_for('main.user_register')}}" value="Register" class="button is-danger is-rounded is-outlined is-fullwidth">Register</a>
 
 						</form>
 					</div>
