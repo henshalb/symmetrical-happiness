@@ -51,7 +51,8 @@
                                         success: function (result) {
                                             var data = "<div style='margin-top:10px' class='buttons'>";
                                             $.each(result, function (index, value) {
-                                                data += "<div class='button is-rounded'>" + value + "</div>"
+                                                peek_url = window.location.href +"/q/"+ value[1]
+                                                data += "<a href="+peek_url+"><div class='button is-rounded'>" + value[0] + "</div></a>"
                                             });
                                             data += "</ul>";
                                             $('#datalist').html(data);

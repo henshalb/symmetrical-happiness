@@ -9,4 +9,4 @@ a simple search to find web project implemented using python-flask and bulma css
 
 ## notice
 - cdn is used for javascript libraries
-- blueprints are not used for this simple project
+- blueprints used

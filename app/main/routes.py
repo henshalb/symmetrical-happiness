@@ -18,7 +18,7 @@ def user_search_doctor_from_home():
     data = request.form.get('text')
     cursor = connection.cursor()
     percent = data+'%'
-    search_query = "select doctor_fullname from doctor where \
+    search_query = "select doctor_fullname,doctor_username from doctor where \
         doctor_fullname LIKE %s ORDER BY doctor_fullname"
     data_query = (percent)
     connection.ping(reconnect=True)

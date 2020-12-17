@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/3a91969c1a.js"></script>
+    <script type=text/javascript>
+		$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+	  </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="tabs is-large is-centered">
+        <ul>
+            <li class="is-active" style="text-align: center;font-size: 30px;font-family: 'Changa One', cursive;">
+                <a>Found Doctor</a></li>
+        </ul>
+    </div>
+    <!-- <div
+        style="margin-top:-15px;margin-bottom: 5px;text-align: center;font-size: 30px;font-family: 'Changa One', cursive;">
+        Details</div> -->
+    <!-- <div class="card"> -->
+        <div style="text-align: center;">
+            <p class="title">{{doctor_name}}</p>
+            <p class="subtitle">Ophthalmology</p>
+            <p>Aster MediCity, Cochin</p>
+            <p>Graduated from Calicut Medical College</p>
+            <p>13 years of experience</p>
+    </div>
+    <div
+        style="margin-top: 5px;margin-bottom: 5px; text-align: center;font-size: 30px;font-family: 'Changa One', cursive;">
+        Appointment Slots</div>
+
+    <div class="card" style="padding: 3%;">
+        <div class="card-content">
+            <p class="title">
+                “There are two hard things in computer science: cache invalidation, naming things, and off-by-one
+                errors.”
+            </p>
+            <p class="subtitle">
+                Jeff Atwood
+            </p>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">One</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Two</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Three</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title">Four</p>
+                        <p class="subtitle">Subtitle</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
