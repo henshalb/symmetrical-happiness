@@ -13,64 +13,87 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
 </head>
 
 <body>
-    <div class="tabs is-large is-centered">
+    <div class="tabs is-centered">
+        {% if 'USER_LOGGED_IN' in session:%}
         <ul>
-            <li class="is-active" style="text-align: center;font-size: 30px;font-family: 'Changa One', cursive;">
-                <a>Found Doctor</a></li>
+            <li class="is-active"><a>{{name}}</a></li>
+            <li><a href="{{url_for('main.user_logout')}}">Logout</a></li>
+
+          </ul> 
+        {% else:%}
+        <ul>
+          <li><a href="{{url_for('main.user_login')}}">Login</a></li>
+          <li><a href="{{url_for('main.user_register')}}">Register</a></li>
         </ul>
+        {%endif%}
+      </div>
+
+
+    <div style="text-align: center;margin-top: -7px;">
+        <p class="title" id="fullName">{{doctor_name}}</p>
+        <p class="subtitle">Ophthalmology</p>
+        <p>Aster MediCity, Cochin</p>
+        <p>Graduated from Calicut Medical College</p>
+        <p>13 years of experience</p>
     </div>
-    <!-- <div
-        style="margin-top:-15px;margin-bottom: 5px;text-align: center;font-size: 30px;font-family: 'Changa One', cursive;">
-        Details</div> -->
-    <!-- <div class="card"> -->
-        <div style="text-align: center;">
-            <p class="title">{{doctor_name}}</p>
-            <p class="subtitle">Ophthalmology</p>
-            <p>Aster MediCity, Cochin</p>
-            <p>Graduated from Calicut Medical College</p>
-            <p>13 years of experience</p>
-    </div>
+
     <div
-        style="margin-top: 5px;margin-bottom: 5px; text-align: center;font-size: 30px;font-family: 'Changa One', cursive;">
+        style="color:grey;margin-top: 5px;margin-bottom: 5px; text-align: center;font-size: 25px;font-family: 'Changa One', cursive;">
         Appointment Slots</div>
 
     <div class="card" style="padding: 3%;">
         <div class="card-content">
             <p class="title">
-                “There are two hard things in computer science: cache invalidation, naming things, and off-by-one
-                errors.”
+                Choose the right slot.
             </p>
             <p class="subtitle">
-                Jeff Atwood
+                You'll pay in the next step, after choosing time.
             </p>
+            <div style="text-align: center;">
             <div class="tile is-ancestor">
                 <div class="tile is-parent">
-                    <article class="tile is-child box">
-                        <p class="title">One</p>
-                        <p class="subtitle">Subtitle</p>
+                    <article class="tile is-child box animate__animated animate__flipInX">
+                        <p><span style="color: red;">2</span> slots</p>
+                        <p>2 Jan 2021</p>
                     </article>
                 </div>
                 <div class="tile is-parent">
-                    <article class="tile is-child box">
-                        <p class="title">Two</p>
-                        <p class="subtitle">Subtitle</p>
+                    <article class="tile is-child box animate__animated animate__flipInX">
+                        <p><span style="color: rgb(189, 82, 10);">4</span> slots</p>
+                        <p>3 Jan 2021</p>
                     </article>
                 </div>
                 <div class="tile is-parent">
-                    <article class="tile is-child box">
-                        <p class="title">Three</p>
-                        <p class="subtitle">Subtitle</p>
+                    <article class="tile is-child box animate__animated animate__flipInX">
+                        <p><span style="color: green;">7</span> slots</p>
+                        <p>4 Jan 2021</p>
                     </article>
                 </div>
                 <div class="tile is-parent">
-                    <article class="tile is-child box">
-                        <p class="title">Four</p>
-                        <p class="subtitle">Subtitle</p>
+                    <article class="tile is-child box animate__animated animate__flipInX">
+                        <p><span style="color: green;">8</span> slots</p>
+                        <p>5 Jan 2021</p>
                     </article>
                 </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box animate__animated animate__flipInX">
+                        <p><span style="color: green;">8</span> slots</p>
+                        <p>6 Jan 2021</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box animate__animated animate__flipInX">
+                        <p><span style="color: green;">8</span> slots</p>
+                        <p>7 Jan 2020</p>
+                    </article>
+                </div>
+            </div>
+                
             </div>
         </div>
     </div>

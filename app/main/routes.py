@@ -1,17 +1,22 @@
 from flask import render_template,request,jsonify
+from flask.globals import session
 from . import main
 import pymysql
 
 connection = pymysql.connect(host='localhost',
                              user='henshalb',
                              password='0220',
-                             db='newdb',
+                             db='happiness',
                              charset='utf8mb4',
                              autocommit=True)
 
 @main.route('/',methods=['GET','POST'])
 def landing():
-    return render_template('landing.html')
+    if 'USER_LOGGED_IN' in session:
+        name = session['USER_DISPLAY_NAME']
+        return render_template('landing.html',name=name)
+    else:
+        return render_template('landing.html')
 
 @main.route('/search_doctor_ajax',methods=['POST'])
 def user_search_doctor_from_home():

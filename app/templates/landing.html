@@ -13,17 +13,45 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
-    <div style="margin-top: 150px;" class="columns is-mobile is-centered">
+    <div class="tabs is-centered">
+        {% if 'USER_LOGGED_IN' in session:%}
+        <ul>
+            <li class="is-active"><a>{{name}}</a></li>
+            <li><a href="{{url_for('main.user_logout')}}">Logout</a></li>
+
+          </ul> 
+        {% else:%}
+        <ul>
+          <li><a href="{{url_for('main.user_login')}}">Login</a></li>
+          <li><a href="{{url_for('main.user_register')}}">Register</a></li>
+        </ul>
+        {%endif%}
+      </div>
+    <section class="hero" style="text-align:center;margin-top:-29px">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title animate__animated animate__flipInX">
+                    Find your doctor.
+                </h1>
+                <h2 class="subtitle animate__animated animate__flipInX">
+                    Get well soon.
+                </h2>
+            </div>
+        </div>
+    </section>
+    <div class="columns is-mobile is-centered animate__animated animate__fadeIn">
         <div class="panel column is-half"
             style="padding: 3%;
 	    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(206, 197, 197) 0%, rgb(204, 170, 214) 100.2% );">
             <div style="padding-top: 0px;padding-bottom: 0px;">
-                <p style="font-size: 90px;font-family: 'Changa One', cursive;">Search</p>
-                <p style="margin-top: -50px; font-size: 70px;font-family: 'Changa One', cursive;">Doctors</p>
+                <p style="font-size: 90px;font-family: 'Changa One', cursive;"
+                    class="animate__animated animate__flipInX">Search</p>
+                <p style="margin-top: -50px; font-size: 70px;font-family: 'Changa One', cursive;"
+                    class="animate__animated animate__flipInX">Doctors</p>
             </div>
             <div style="text-align: center;">
                 <form action="#" method="POST">
@@ -51,8 +79,8 @@
                                         success: function (result) {
                                             var data = "<div style='margin-top:10px' class='buttons'>";
                                             $.each(result, function (index, value) {
-                                                peek_url = window.location.href +"/q/"+ value[1]
-                                                data += "<a href="+peek_url+"><div class='button is-rounded'>" + value[0] + "</div></a>"
+                                                peek_url = window.location.href + "q/" + value[1]
+                                                data += "<a href=" + peek_url + "><div class='button is-rounded'>" + value[0] + "</div></a>"
                                             });
                                             data += "</ul>";
                                             $('#datalist').html(data);
@@ -71,7 +99,15 @@
             </div>
         </div>
     </div>
-
+    <br>
+    <!-- <footer class="footer"> -->
+        <div class="content has-text-centered">
+            <p>
+                <strong>Designed</strong> by <a href="https://github.com/henshalb">Henshal B</a>. The source code is not
+                licensed.
+            </p>
+        </div>
+    <!-- </footer> -->
 </body>
 
 </html>
