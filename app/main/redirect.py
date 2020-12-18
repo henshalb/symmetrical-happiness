@@ -14,7 +14,7 @@ def login_required(f):
     return decorated_function
 
 
-@main.route('/q/<username>',methods=['GET'])
+@main.route('/q/<string:username>',methods=['GET'])
 @login_required
 def result(username):
     cursor = connection.cursor()

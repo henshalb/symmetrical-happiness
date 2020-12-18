@@ -2,13 +2,15 @@ from flask import render_template,request,jsonify
 from flask.globals import session
 from . import main
 import pymysql
+from app.config import db_point_dev
 
-connection = pymysql.connect(host='localhost',
-                             user='henshalb',
-                             password='0220',
-                             db='happiness',
-                             charset='utf8mb4',
-                             autocommit=True)
+connection = pymysql.\
+    connect(host=db_point_dev.host,\
+    user=db_point_dev.user,\
+    password=db_point_dev.password,\
+    db=db_point_dev.db,\
+    charset='utf8mb4',\
+    autocommit=True)
 
 @main.route('/',methods=['GET','POST'])
 def landing():
