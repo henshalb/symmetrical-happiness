@@ -2,3 +2,4 @@ Flask==1.1.2
 passlib==1.7.4
 PyMySQL==0.10.1
 pytest
+pytest-mysql

@@ -12,7 +12,7 @@ connection = pymysql.\
     charset='utf8mb4',\
     autocommit=True)
 
-@main.route('/',methods=['GET','POST'])
+@main.route('/',methods=['GET'])
 def landing():
     if 'USER_LOGGED_IN' in session:
         name = session['USER_DISPLAY_NAME']
