@@ -14,9 +14,11 @@ if existing venv setup shows errors\
 -`sudo mysql`\
 -`source db.sql`
 ### config setup
-edit database details in config\
+edit database details in config
+### run
 -`cd symmetrical-happiness`\
 -`python3 main.py`
+
 
 ## how this is done
 - a simple search page designed using bulma
