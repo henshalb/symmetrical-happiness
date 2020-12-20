@@ -2,7 +2,7 @@
 a simple search to find web project implemented using python-flask and bulma css
 
 ## How to run?
--`git clone -----url----`\
+-`git clone https://github.com/henshalb/symmetrical-happiness.git`\
 -`cd symmetrical-happiness`
 ### venv
 if existing venv setup shows errors\
