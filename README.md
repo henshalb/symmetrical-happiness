@@ -2,6 +2,14 @@
 a simple search to find web project implemented using python-flask and bulma css
 
 ## How to run?
+'''
+git clone -----url----
+cd directory
+'''
+### install requiremnts
+'''
+pip3 install -r requirements.txt 
+'''
 ### mysql pre-setup[in BASH]
 '''
 cd symmetrical-happiness
