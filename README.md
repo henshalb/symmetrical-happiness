@@ -14,8 +14,7 @@ if existing venv setup shows errors\
 -`sudo mysql`\
 -`source db.sql`
 ### config setup
-- edit database details in config
-###
+edit database details in config\
 -`cd symmetrical-happiness`\
 -`python3 main.py`
 
