@@ -101,7 +101,7 @@ def user_register_action():
 
 
 
-@main.route("/loginspec", methods=['GET','POST'])
+@main.route("/loginspec", methods=['POST'])
 def loginspec():
     username = request.form['username']
     password = request.form['password']

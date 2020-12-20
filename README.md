@@ -1,6 +1,16 @@
 # symmetrical-happiness
 a simple search to find web project implemented using python-flask and bulma css
 
+## How to run?
+### mysql pre-setup[in BASH]
+'''
+cd symmetrical-happiness
+sudo mysql
+source db.sql
+'''
+### config setup
+- edit database details in config
+
 ## how this is done
 - a simple search page designed using bulma
 - ajax to fetch similiar typos
@@ -23,10 +33,3 @@ a simple search to find web project implemented using python-flask and bulma css
 - users
 - doctors
 - events
-
-## mysql pre-setup[in BASH]
-'''
-cd symmetrical-happiness
-sudo mysql
-source db.sql
-'''

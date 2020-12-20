@@ -1,5 +1,3 @@
-from app import create_app
-
 def test_landing_gepo(test_client):
     get_response = test_client.get('/')
     post_response = test_client.post('/')
