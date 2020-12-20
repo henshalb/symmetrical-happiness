@@ -5,11 +5,11 @@ a simple search to find web project implemented using python-flask and bulma css
 -`git clone -----url----`\
 -`cd symmetrical-happiness`
 ### venv
-if existing venv setup shows errors
+if existing venv setup shows errors\
 -`python3 -m venv venv`\
 -`source venv/bin/activate`\
 -`pip3 install -r requirements.txt`
-### mysql pre-setup[in BASH]
+### mysql pre-setup[in BASH]\
 -`cd symmetrical-happiness`\
 -`sudo mysql`\
 -`source db.sql`
