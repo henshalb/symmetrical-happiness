@@ -19,6 +19,9 @@ edit database details in config
 -`cd symmetrical-happiness`\
 -`python3 main.py`
 
+## licesnsed
+the source code must not be used without prior permission.\
+for permission contact henshalb@gmail.com
 
 ## how this is done
 - a simple search page designed using bulma
